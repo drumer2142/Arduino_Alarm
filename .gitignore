@@ -1,0 +1,6 @@
+*.html
+__pycache__/*
+.idea/*
+py_test/*
+Test_html/*
+cron_script/*
