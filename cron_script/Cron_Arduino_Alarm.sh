@@ -1,2 +1,2 @@
 #!/bin/sh
-python3 /root/Arduino-Alarm/index.py
+python3 /root/Arduino_Alarm/index.py
