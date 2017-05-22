@@ -43,19 +43,16 @@ def find_name_days(name_days_url, main_dict):
 
 
 def process_nameday_arrays(todays_namedays, tommorows_namedays, main_dict):
-    #print the arrays for reference
+    # debug arrays
     # print(todays_namedays)
     # print(tommorows_namedays)
 
-    # calculate the full list length and subtract it from the rest,
-    # also fixed 3 positions before end
-    todays_index = len(todays_namedays) - 3
     # after the sixth position of the array the names start it is fixed
-    todays_only_names = todays_namedays[6:todays_index]
+
+    todays_only_names = todays_namedays[6:-3]
     # print("Today: ", todays_only_names)
 
-    tommorows_index = len(tommorows_namedays) - 3
-    tommorows_only_names = tommorows_namedays[6:tommorows_index]
+    tommorows_only_names = tommorows_namedays[6:-3]
     # print("Tomorrow: ", tommorows_only_names)
 
     main_dict["todays_name_days"] = todays_only_names
