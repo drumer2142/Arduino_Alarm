@@ -6,8 +6,9 @@ It uses MongoDB to store the data.
 The data stored are:
 
 - Today's day name
-- Today's time (depends on the cronjob)
+- Time (depends on the cronjob)
 - Year 
+- Month
 - Today's day number
 - Today's strikes
 - Tommorow strikes
