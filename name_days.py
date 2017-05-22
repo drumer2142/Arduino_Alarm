@@ -7,7 +7,8 @@ def form_xml(str_data):
 
 
 def find_name_days(name_days_url, main_dict):
-    if sites_urls.get_site_code(name_days_url) == 200:
+    try:
+    #if sites_urls.get_site_code(name_days_url) == 200:
         scrapped_data = sites_urls.scrap_page(name_days_url)
         xml_data = form_xml(scrapped_data)
         channel = xml_data.findall("channel")
@@ -32,9 +33,10 @@ def find_name_days(name_days_url, main_dict):
                 # add to count 1
                 tmp_count = tmp_count + 1
 
-
-    else:
+    except Exception as ex:
+    #else:
         print("It appears that the site eortologio.gr is not reachable at the moment")
+        print("Exception %s", str(ex))
 
     # parse to process_nameday_arrays for more splitting
     process_nameday_arrays(todays_namedays, tommorows_namedays, main_dict)

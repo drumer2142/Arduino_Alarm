@@ -41,8 +41,11 @@ def make_soup(source, main_dict):
 def strikes_url(url, main_dict):
     # check if status code is 200 else output an error
     # if the website is down
-    if sites_urls.get_site_code(url) == 200:
+    #if sites_urls.get_site_code(url) == 200:
+    try:
         source = sites_urls.scrap_page(url)
         make_soup(source, main_dict)
-    else:
+    except Exception as e:
+    #else:
         print("It appears that the site apergia.gr is not reachable at the moment")
+        print("Error %s", str(e))
