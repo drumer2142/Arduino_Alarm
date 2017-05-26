@@ -12,7 +12,7 @@ class alarm_api:
 
     def MongoConnect(self):
         client = MongoClient(self.host, self.port)
-        db = client.Arduino_Alarm
+        self.db = client.Arduino_Alarm
 
     def setCollection(self, collection_name):
         self.collection_name = collection_name
