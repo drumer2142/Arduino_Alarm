@@ -1,18 +1,17 @@
 from pymongo import MongoClient
 
-class alarm_api:
 
-    db = ""
+class alarm_api:
+    database = ""
+    collection_name = ""
 
     def __init__(self, host, port):
-
         self.host = host
         self.port = port
 
-
     def MongoConnect(self):
         client = MongoClient(self.host, self.port)
-        self.db = client.Arduino_Alarm
+        self.database = client.Arduino_Alarm
 
     def setCollection(self, collection_name):
         self.collection_name = collection_name
@@ -20,11 +19,11 @@ class alarm_api:
     def getCollection(self):
         return self.collection_name
 
-    def makeTestQuery():
+    def makeTestQuery(self):
         collection = self.collection_name
-
-    def test_print(self):
-        print(self.db)
+        db = self.database
+        # test query
+        data = db.collection.find()
 
 
 
@@ -32,9 +31,7 @@ def main():
     api = alarm_api('localhost', 27017)
     api.MongoConnect()
     api.setCollection('alarm_data')
-    api.test_print()
-    #name = api.getCollection()
-    #print(name)
+    api.makeTestQuery()
 
 
 if __name__ == '__main__':
