@@ -20,6 +20,7 @@ def main():
     # create object of date time module
     # variables to access: day month day_no time year
     date_time_is = dt_is.runDT_is()
+    print("New Tuple data: ", date_time_is)
     # get the original name of day
     original_nod = dt_is.get_name_of_day(date_time_is.day)
     # print("Today the day is --> ", original_nod)
