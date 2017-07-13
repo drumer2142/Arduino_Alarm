@@ -8,7 +8,7 @@ def insert_mongo(main_dict):
     client = mgc('localhost', 27017)
     db = client.Arduino_Alarm
     collection = db.alarm_data
-    post_main = {"name_of_day": main_dict["name_of_day"], "month": main_dict["name_of_day"], "day_no": main_dict["day_no"], "time": main_dict["time"], "year": main_dict["year"], "todays_strikes": main_dict["todays_strikes"], "tomorrows_strikes": main_dict["tomorrows_strikes"], "todays_name_days": main_dict["todays_name_days"], "tomorrows_name_days": main_dict["tomorrows_name_days"]}
+    post_main = {"name_of_day": main_dict["name_of_day"], "month": main_dict["month"], "day_no": main_dict["day_no"], "time": main_dict["time"], "year": main_dict["year"], "todays_strikes": main_dict["todays_strikes"], "tomorrows_strikes": main_dict["tomorrows_strikes"], "todays_name_days": main_dict["todays_name_days"], "tomorrows_name_days": main_dict["tomorrows_name_days"]}
     post_db = collection.insert_one(post_main)
 
 
