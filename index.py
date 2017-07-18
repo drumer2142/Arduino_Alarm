@@ -2,10 +2,11 @@ import name_days
 import strikes
 import date_and_time_is as dt_is
 from pymongo import MongoClient as mgc
+import cfg as setup
 
 
 def insert_mongo(main_dict):
-    client = mgc('localhost', 27017)
+    client = mgc(setup.server['IP'], 27017)
     db = client.Arduino_Alarm
     collection = db.alarm_data
     post_main = {"name_of_day": main_dict["name_of_day"], "month": main_dict["month"], "day_no": main_dict["day_no"], "time": main_dict["time"], "year": main_dict["year"], "todays_strikes": main_dict["todays_strikes"], "tomorrows_strikes": main_dict["tomorrows_strikes"], "todays_name_days": main_dict["todays_name_days"], "tomorrows_name_days": main_dict["tomorrows_name_days"]}

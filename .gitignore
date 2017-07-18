@@ -4,3 +4,4 @@ __pycache__/*
 py_test/*
 Test_html/*
 jsons/
+cfg.py
