@@ -1,9 +1,11 @@
 language: python3
+sudo: required
 python:
   - "3.0"
   - "3.0-dev"
 # command to install dependencies
 install:
+  - pip install lxml
   - pip install beautifulsoup4
   - pip install pymongo
 # command to run tests
