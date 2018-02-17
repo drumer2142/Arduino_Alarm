@@ -32,6 +32,7 @@ def find_name_days(name_days_url, main_dict):
 
                 # add to count 1
                 tmp_count = tmp_count + 1
+        process_nameday_arrays(todays_namedays, tommorows_namedays, main_dict)
 
     except Exception as ex:
     #else:
@@ -39,7 +40,7 @@ def find_name_days(name_days_url, main_dict):
         print("Exception %s", str(ex))
 
     # parse to process_nameday_arrays for more splitting
-    process_nameday_arrays(todays_namedays, tommorows_namedays, main_dict)
+    #process_nameday_arrays(todays_namedays, tommorows_namedays, main_dict)
 
 
 def process_nameday_arrays(todays_namedays, tommorows_namedays, main_dict):
