@@ -6,8 +6,8 @@ python:
 # command to install dependencies
 install:
   - pip install --upgrade pip --user
-  - pip install lxml
-  - pip install beautifulsoup4
-  - pip install pymongo
+  - pip install --user lxml
+  - pip install --user beautifulsoup4
+  - pip install --user pymongo
 # command to run tests
 script: python3 index.py
