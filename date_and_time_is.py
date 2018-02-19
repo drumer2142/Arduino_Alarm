@@ -9,9 +9,9 @@ def getDT_Data():
 
 def runDT_is():
     data_are = getDT_Data()
-    print(data_are)
+    # print(data_are)
     data_are_split = data_are.split(" ")
-    print("Data Split Array: ", data_are_split)
+    # print("Data Split Array: ", data_are_split)
 
     if data_are_split[3] == " ":
         # create a namedtuple to use as an object in index file
@@ -23,7 +23,7 @@ def runDT_is():
         date_time_tuple_NoSpace = namedtuple('Date_Time', 'day month day_no time year')
         # create the tuple data without the space
         date_time_is = date_time_tuple_NoSpace(data_are_split[0:1], data_are_split[1:2], data_are_split[2:3], data_are_split[3:4], data_are_split[4:5])
-    print("Tuple Array: ", date_time_is)
+    # print("Tuple Array: ", date_time_is)
     return date_time_is
 
 

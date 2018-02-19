@@ -21,7 +21,7 @@ def main():
     # create object of date time module
     # variables to access: day month day_no time year
     date_time_is = dt_is.runDT_is()
-    print("New Tuple data: ", date_time_is)
+    # print("New Tuple data: ", date_time_is)
     # get the original name of day
     original_nod = dt_is.get_name_of_day(date_time_is.day)
     # print("Today the day is --> ", original_nod)
@@ -45,15 +45,15 @@ def main():
         # insert data to mongoDB
         insert_mongo(main_dict)
 
-    #print(main_dict["name_of_day"])
-    #print(main_dict["month"])
-    #print(main_dict["day_no"])
-    #print(main_dict["time"])
-    #print(main_dict["year"])
-    #print(main_dict["todays_strikes"])
-    #print(main_dict["tomorrows_strikes"])
-    #print(main_dict["todays_name_days"])
-    #print(main_dict["tomorrows_name_days"])
+    # print(main_dict["name_of_day"])
+    # print(main_dict["month"])
+    # print(main_dict["day_no"])
+    # print(main_dict["time"])
+    # print(main_dict["year"])
+    # print(main_dict["todays_strikes"])
+    # print(main_dict["tomorrows_strikes"])
+    # print(main_dict["todays_name_days"])
+    # print(main_dict["tomorrows_name_days"])
 
 
 if __name__ == '__main__':
