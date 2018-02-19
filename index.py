@@ -3,8 +3,6 @@ import strikes
 import date_and_time_is as dt_is
 from pymongo import MongoClient as mgc
 import cfg as setup
-#attempt to create json object
-import json
 
 
 def insert_mongo(main_dict):
@@ -34,17 +32,13 @@ def main():
     main_dict["time"] = date_time_is.time[0]
     main_dict["year"] = date_time_is.year[0]
 
-    # get strikes
-    # test url
-    # url = "http://192.168.4.5:81/py_test/py_test2.html"
-
     #original url
-    url = "http://www.apergia.gr/q/"
+    url = setup.urls['strikes']
     strikes.strikes_url(url, main_dict)
 
 
     #name days original url
-    name_days_url = "http://www.eortologio.gr/rss/si_av_el.xml"
+    name_days_url = setup.urls['namedays']
     name_days.find_name_days(name_days_url, main_dict)
 
     if setup.server['UseMongo'] == 'True':
