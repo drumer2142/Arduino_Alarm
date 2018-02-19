@@ -48,15 +48,15 @@ def main():
     # insert data to mongoDB
     insert_mongo(main_dict)
 
-    print(main_dict["name_of_day"])
-    print(main_dict["month"])
-    print(main_dict["day_no"])
-    print(main_dict["time"])
-    print(main_dict["year"])
-    print(main_dict["todays_strikes"])
-    print(main_dict["tomorrows_strikes"])
-    print(main_dict["todays_name_days"])
-    print(main_dict["tomorrows_name_days"])
+    #print(main_dict["name_of_day"])
+    #print(main_dict["month"])
+    #print(main_dict["day_no"])
+    #print(main_dict["time"])
+    #print(main_dict["year"])
+    #print(main_dict["todays_strikes"])
+    #print(main_dict["tomorrows_strikes"])
+    #print(main_dict["todays_name_days"])
+    #print(main_dict["tomorrows_name_days"])
 
 
 if __name__ == '__main__':
