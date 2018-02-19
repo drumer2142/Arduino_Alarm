@@ -3,6 +3,8 @@ import strikes
 import date_and_time_is as dt_is
 from pymongo import MongoClient as mgc
 import cfg as setup
+#attempt to create json object
+import json
 
 
 def insert_mongo(main_dict):
@@ -45,8 +47,9 @@ def main():
     name_days_url = "http://www.eortologio.gr/rss/si_av_el.xml"
     name_days.find_name_days(name_days_url, main_dict)
 
-    # insert data to mongoDB
-    insert_mongo(main_dict)
+    if setup.server['UseMongo'] == 'True':
+        # insert data to mongoDB
+        insert_mongo(main_dict)
 
     #print(main_dict["name_of_day"])
     #print(main_dict["month"])
