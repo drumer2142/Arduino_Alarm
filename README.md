@@ -1,18 +1,21 @@
 # Arduino_Alarm
 
-The project Arduino Alarm is a web srapper only for use inside greece.
-It scrapes strikes data and also namedays.
-It uses MongoDB to store the data.
-The data stored are:
+The project Arduino Alarm is a web srapper only for use in Greece.
+It scrapes data about public strikes of Greece and also Greek namedays.
+It uses MongoDB to store all of the the data scrapped and generated.
 
-- Today's day name
-- Time (depends on the cronjob)
-- Year 
+The data stored in the MongoDB are:
+
+- Today's name days 
+- Time (depends on the server configuration)
+- Year
 - Month
 - Today's day number
 - Today's strikes
-- Tommorow strikes
+- Tommorow's strikes
 - Today's name days
-- Tommorow name days 
+- Tommorow's name days 
 
-Created By: drumer2142, 21 May 2017
+Created By: drumer2142, 21 May 2017 and maintained.
+
+** IF YOU HAVE A PROBLEM PLEASE CREATE AN ISSUE. **
