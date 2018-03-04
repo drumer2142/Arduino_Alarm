@@ -31,15 +31,17 @@ def main():
     main_dict["day_no"] = date_time_is.day_no[0]
     main_dict["time"] = date_time_is.time[0]
     main_dict["year"] = date_time_is.year[0]
+    
 
-    #original url
-    url = setup.urls['strikes']
-    strikes.strikes_url(url, main_dict)
+    if setup.server['UseScrappers'] == 'True':
 
+        #original url
+        url = setup.urls['strikes']
+        strikes.strikes_url(url, main_dict)
 
-    #name days original url
-    name_days_url = setup.urls['namedays']
-    name_days.find_name_days(name_days_url, main_dict)
+        #name days original url
+        name_days_url = setup.urls['namedays']
+        name_days.find_name_days(name_days_url, main_dict)
 
     if setup.server['UseMongo'] == 'True':
         # insert data to mongoDB
