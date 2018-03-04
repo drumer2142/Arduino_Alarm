@@ -13,7 +13,7 @@ def runDT_is():
     data_are_split = data_are.split(" ")
     # print("Data Split Array: ", data_are_split)
 
-    if data_are_split[2] == '':
+    if data_are_split[2] == " ":
         # create a namedtuple to use as an object in index file
         date_time_tuple_space = namedtuple('Date_Time', 'day month space day_no time year')
         # create the tuple data
