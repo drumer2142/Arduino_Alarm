@@ -4,4 +4,4 @@ __pycache__/*
 py_test/*
 Test_html/*
 jsons/
-Cron_Arduin_Alarm.sh
+cron_script/Cron_Arduino_Alarm.sh
