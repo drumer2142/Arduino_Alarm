@@ -1,4 +1,4 @@
-import sites_urls
+from py_files import sites_urls
 import xml.etree.ElementTree as et
 
 

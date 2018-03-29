@@ -1,6 +1,6 @@
-import name_days
-import strikes
-import date_and_time_is as dt_is
+from py_files import name_days
+from py_files import strikes
+from py_files import date_and_time_is as dt_is
 from pymongo import MongoClient as mgc
 import cfg as setup
 
@@ -44,7 +44,7 @@ def main():
         name_days_url = setup.urls['namedays']
         scrape_namedays = name_days.find_name_days(name_days_url, main_dict)
 
-    if setup.server['UseMongo'] == 'True' and (scrape_strikes != False or scrape_namedays != False):
+    if setup.server['UseMongo'] == 'True' and (scrape_strikes != False and scrape_namedays != False):
         # insert data to mongoDB
         insert_mongo(main_dict)
     

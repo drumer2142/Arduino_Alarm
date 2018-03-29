@@ -1,5 +1,5 @@
 import bs4
-import sites_urls
+from py_files import sites_urls
 
 
 def make_soup(source, main_dict):
