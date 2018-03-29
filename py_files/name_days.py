@@ -1,5 +1,6 @@
 from py_files import sites_urls
 import xml.etree.ElementTree as et
+from py_files import logging as log
 
 
 def form_xml(str_data):
@@ -12,8 +13,10 @@ def find_name_days(name_days_url, main_dict):
         scrapped_data = sites_urls.scrap_page(name_days_url)
 
     except Exception as ex:
+        error_msg = "It appears that the site eortologio.gr is not reachable at the moment"
+		log.log_error("name_days", error_msg)
 
-        print("It appears that the site eortologio.gr is not reachable at the moment")
+        print(error_msg)
         print("Error: ", str(e))
         return False
 

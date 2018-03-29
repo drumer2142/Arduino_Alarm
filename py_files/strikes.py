@@ -1,5 +1,6 @@
 import bs4
 from py_files import sites_urls
+from py_files import logging as log
 
 
 def make_soup(source, main_dict):
@@ -46,7 +47,10 @@ def strikes_url(url, main_dict):
 
     except Exception as e:
 
-        print("It appears that the site apergia.gr is not reachable at the moment")
+        error_msg = "It appears that the site apergia.gr is not reachable at the moment"
+        log.log_error("strikes", error_msg)
+
+        print(error_msg)
         print("Error: ", str(e))
         return False
     
@@ -55,7 +59,9 @@ def strikes_url(url, main_dict):
         make_soup(source, main_dict)
 
     except Exception as e:
-        
-        print("Could not create soup")
+        error_msg = "Could not create soup"
+        log.log_error("strikes", error_msg)
+
+        print(error_msg)
         print("Error: ", str(e))
         return False

@@ -1,4 +1,5 @@
 import urllib.request
+from py_files import logging as log
 
 def scrap_page(url):
 	
@@ -8,7 +9,10 @@ def scrap_page(url):
 		return str_data
   
 	except Exception as e:
-		print("Something went wrong trying to query the url")
+		error_msg = "Something went wrong trying to query the url"
+		log.log_error("urllib_requests", error_msg)
+
+		print(error_msg)
 		print("Error: ", str(e))
 		return False
 
