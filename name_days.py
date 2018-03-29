@@ -8,36 +8,38 @@ def form_xml(str_data):
 
 def find_name_days(name_days_url, main_dict):
     try:
-    #if sites_urls.get_site_code(name_days_url) == 200:
+
         scrapped_data = sites_urls.scrap_page(name_days_url)
-        xml_data = form_xml(scrapped_data)
-        channel = xml_data.findall("channel")
-
-        # init empty arrays for namedays
-        todays_namedays = []
-        tommorows_namedays = []
-
-        for x in channel:
-            item = x.findall("item")
-            tmp_count = 0
-            for y in item:
-                name_days_title = y.find("title").text
-                name_days_title_split = name_days_title.split()
-                # Split in to different array for easier processing
-                # Not using append because it creates second dimension
-                if tmp_count == 0:
-                    todays_namedays = todays_namedays + name_days_title_split
-                elif tmp_count == 1:
-                    tommorows_namedays = tommorows_namedays + name_days_title_split
-
-                # add to count 1
-                tmp_count = tmp_count + 1
-        process_nameday_arrays(todays_namedays, tommorows_namedays, main_dict)
 
     except Exception as ex:
-    #else:
+
         print("It appears that the site eortologio.gr is not reachable at the moment")
-        print("Exception %s", str(ex))
+        print("Error: ", str(e))
+        return False
+
+    xml_data = form_xml(scrapped_data)
+    channel = xml_data.findall("channel")
+
+    # init empty arrays for namedays
+    todays_namedays = []
+    tommorows_namedays = []
+
+    for x in channel:
+        item = x.findall("item")
+        tmp_count = 0
+        for y in item:
+            name_days_title = y.find("title").text
+            name_days_title_split = name_days_title.split()
+            # Split in to different array for easier processing
+            # Not using append because it creates second dimension
+            if tmp_count == 0:
+                todays_namedays = todays_namedays + name_days_title_split
+            elif tmp_count == 1:
+                tommorows_namedays = tommorows_namedays + name_days_title_split
+
+            # add to count 1
+            tmp_count = tmp_count + 1
+    process_nameday_arrays(todays_namedays, tommorows_namedays, main_dict)
 
     # parse to process_nameday_arrays for more splitting
     #process_nameday_arrays(todays_namedays, tommorows_namedays, main_dict)

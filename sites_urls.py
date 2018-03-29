@@ -7,8 +7,10 @@ def scrap_page(url):
 		str_data = web_data.read()
 		return str_data
   
-	except:
-		print("Something went wrong trying tp request the url open")
+	except Exception as e:
+		print("Something went wrong trying to query the url")
+		print("Error: ", str(e))
+		return False
 
 
 def get_site_code(url):

@@ -34,28 +34,30 @@ def main():
     
 
     if setup.server['UseScrappers'] == 'True':
-
+        
         #original url
         url = setup.urls['strikes']
-        strikes.strikes_url(url, main_dict)
+        scrape_strikes = strikes.strikes_url(url, main_dict)
 
+    
         #name days original url
         name_days_url = setup.urls['namedays']
-        name_days.find_name_days(name_days_url, main_dict)
+        scrape_namedays = name_days.find_name_days(name_days_url, main_dict)
 
-    if setup.server['UseMongo'] == 'True':
+    if setup.server['UseMongo'] == 'True' and (scrape_strikes != False or scrape_namedays != False):
         # insert data to mongoDB
         insert_mongo(main_dict)
-
-    # print(main_dict["name_of_day"])
-    # print(main_dict["month"])
-    # print(main_dict["day_no"])
-    # print(main_dict["time"])
-    # print(main_dict["year"])
-    # print(main_dict["todays_strikes"])
-    # print(main_dict["tomorrows_strikes"])
-    # print(main_dict["todays_name_days"])
-    # print(main_dict["tomorrows_name_days"])
+    
+    if (scrape_strikes != False and scrape_namedays != False):
+        print(main_dict["name_of_day"])
+        print(main_dict["month"])
+        print(main_dict["day_no"])
+        print(main_dict["time"])
+        print(main_dict["year"])
+        print(main_dict["todays_strikes"])
+        print(main_dict["tomorrows_strikes"])
+        print(main_dict["todays_name_days"])
+        print(main_dict["tomorrows_name_days"])
 
 
 if __name__ == '__main__':
