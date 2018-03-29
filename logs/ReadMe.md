@@ -1,0 +1,1 @@
+** This folder will contain all the log files which are going to be created in case of errors. **

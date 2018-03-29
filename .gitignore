@@ -1,5 +1,6 @@
 *.html
 __pycache__/*
+py_files/__pycache__
 .idea/*
 py_test/*
 Test_html/*
