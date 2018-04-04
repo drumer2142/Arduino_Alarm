@@ -14,7 +14,8 @@ def find_name_days(name_days_url, main_dict):
 
     except Exception as ex:
         error_msg = "It appears that the site eortologio.gr is not reachable at the moment"
-		log.log_error("name_days", error_msg)
+        
+        log.log_error("name_days", error_msg)
 
         print(error_msg)
         print("Error: ", str(e))
