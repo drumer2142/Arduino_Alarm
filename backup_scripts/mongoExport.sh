@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 
 project_dir=/srv/python_projects/Arduino_Alarm/backup_scripts
 
 python3 $project_dir/mongoExport.py
 
-sleep 15
+sleep 5
 
 cp $project_dir/logs/Mongo_Backups/mongo_export_backup.json /var/www/html
 
