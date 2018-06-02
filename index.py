@@ -45,8 +45,8 @@ def main():
         scrape_namedays = name_days.find_name_days(name_days_url, main_dict)
 
     if setup.server['UseMongo'] == 'True' and (scrape_strikes != False and scrape_namedays != False):
-        insert data to mongoDB
-        #insert_mongo(main_dict)
+        #insert data to mongoDB
+        insert_mongo(main_dict)
     
     if (scrape_strikes != False and scrape_namedays != False):
         print(main_dict["name_of_day"])
